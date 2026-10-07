@@ -1,69 +1,469 @@
-import Image from "next/image";
+'use client';
 
-export default function Home() {
+import React, { useState } from 'react';
+import {
+  Smartphone,
+  Sparkles,
+  ArrowRight,
+  Lock,
+  Zap,
+  Layers,
+  ChevronRight,
+  Menu,
+  X,
+  BookOpen,
+  Mic,
+  Activity,
+  Clock,
+  ShieldCheck,
+  AlertCircle
+} from 'lucide-react';
+
+export default function Build03ProductStudio() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-[#07080D] text-slate-100 font-sans selection:bg-indigo-500/30 selection:text-indigo-200 antialiased overflow-x-hidden">
+      {/* Background Gradient Orbs */}
+      <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-transparent blur-[160px] rounded-full" />
+        <div className="absolute top-[40%] -right-40 w-[600px] h-[600px] bg-blue-600/10 blur-[170px] rounded-full" />
+        <div className="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-purple-600/10 blur-[160px] rounded-full" />
+      </div>
+
+      {/* Navigation */}
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#07080D]/75 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <a href="#" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 via-indigo-600 to-purple-600 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+              03
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold tracking-tight text-white group-hover:text-indigo-300 transition-colors">
+                Build03<span className="text-indigo-500">.</span>
+              </span>
+              <span className="text-[10px] text-slate-400 tracking-wider uppercase font-semibold -mt-1">
+                Apps & Studios
+              </span>
+            </div>
+          </a>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+            <a href="#apps" className="hover:text-white transition-colors">제품 라인업</a>
+            <a href="#philosophy" className="hover:text-white transition-colors">제품 철학</a>
+            <a href="#labs" className="hover:text-white transition-colors">Build03 Labs</a>
+            <a href="#beta-status" className="hover:text-white transition-colors">베타 프로그램 현황</a>
+          </nav>
+
+          {/* TestFlight Status Indicator (Inactive/Scheduled) */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium border border-white/10 bg-white/[0.04] text-slate-400">
+              <span className="w-2 h-2 rounded-full bg-amber-400/80" />
+              <span>TestFlight 모집 오픈 예정</span>
+            </div>
+          </div>
+
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-slate-400 hover:text-white p-2"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Nav */}
+        {mobileMenuOpen && (
+          <div className="md:hidden px-6 py-6 bg-[#0c0e18] border-b border-white/10 flex flex-col gap-4">
+            <a href="#apps" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 py-1">제품 라인업</a>
+            <a href="#philosophy" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 py-1">제품 철학</a>
+            <a href="#labs" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 py-1">Build03 Labs</a>
+            <a href="#beta-status" onClick={() => setMobileMenuOpen(false)} className="text-slate-300 py-1">베타 프로그램 현황</a>
+            <div className="mt-2 text-center py-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-400 text-xs font-medium">
+              베타 테스터 모집 준비 중
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-20 md:pt-36 md:pb-32 max-w-7xl mx-auto px-6 text-center">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs md:text-sm font-medium mb-8 backdrop-blur-sm shadow-sm">
+          <Sparkles size={16} className="text-indigo-400 animate-pulse" />
+          <span>Independent Mobile Software Maker</span>
+        </div>
+
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.14]">
+          지능형 인공지능을 가장 <br />
+          <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
+            직관적인 모바일 경험
+          </span>으로 만듭니다.
+        </h1>
+
+        <p className="mt-7 text-base sm:text-lg md:text-xl text-slate-300/90 max-w-2xl mx-auto font-light leading-relaxed">
+          Build03(빌드공삼)은 첨단 온디바이스 AI와 파운데이션 모델을 직접 설계한 네이티브 모바일 앱 속에 담아내어, 사람들의 학습과 일상을 혁신하는 자체 프로덕트를 제작·운영합니다.
+        </p>
+
+        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="#apps"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold bg-white text-slate-950 hover:bg-slate-200 transition-all shadow-xl hover:scale-[1.02]"
+          >
+            출시 예정 앱 보기
+            <ArrowRight size={18} />
+          </a>
+          <a
+            href="#beta-status"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 transition-all backdrop-blur-sm"
+          >
+            <Clock size={16} className="text-amber-400" />
+            베타 오픈 일정 안내
+          </a>
+        </div>
+
+        {/* Hero Interactive Device Mockup */}
+        <div className="mt-16 md:mt-24 max-w-4xl mx-auto p-4 rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl shadow-2xl shadow-indigo-950/40">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+            <div className="p-5 rounded-2xl bg-black/40 border border-white/5 flex flex-col justify-between">
+              <div>
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                  FLAGSHIP
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-white">AI 학습 아키텍처</h3>
+                <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                  방대한 학술 문서를 온디바이스에서 파싱하고 간격 반복 암기 카드로 즉각 시각화.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-2 text-xs text-indigo-400 font-mono">
+                <span>CoreML + Local Vector</span>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-black/40 border border-white/5 flex flex-col justify-between">
+              <div>
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30">
+                  VOICE AGENT
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-white">음성 기반 라이프케어</h3>
+                <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                  초저지연 음성 대화 파이프라인으로 일상 상태와 웰니스를 확인하는 인공지능 에이전트.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-2 text-xs text-purple-400 font-mono">
+                <span>Voice Pipeline + Zero Lag</span>
+              </div>
+            </div>
+
+            <div className="p-5 rounded-2xl bg-black/40 border border-white/5 flex flex-col justify-between">
+              <div>
+                <span className="px-2.5 py-1 rounded-md text-[11px] font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                  NATIVE QUALITY
+                </span>
+                <h3 className="mt-4 text-lg font-bold text-white">120Hz 네이티브 UX</h3>
+                <p className="mt-1 text-xs text-slate-400 leading-relaxed">
+                  웹뷰 래핑 없는 100% Swift/SwiftUI 네이티브 햅틱과 물리 기반 인터랙션 구현.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-2 text-xs text-emerald-400 font-mono">
+                <span>Native Craftsmanship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Apps Lineup Section */}
+      <section id="apps" className="py-24 max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-xs sm:text-sm uppercase tracking-widest text-indigo-400 font-semibold">Upcoming Products</h2>
+          <p className="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Build03이 제작 중인 모바일 앱 라인업
+          </p>
+          <p className="mt-4 text-slate-400 text-sm sm:text-base">
+            완성도 높은 빌드를 위해 현재 내부 안정화 테스트를 진행하고 있으며, 순차적으로 클로즈드 베타가 오픈될 예정입니다.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="space-y-8">
+          {/* App 1: Memorize & Study Assistant App */}
+          <div className="group relative p-8 sm:p-12 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.07] via-white/[0.03] to-transparent hover:border-indigo-500/40 transition-all duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
+                  <BookOpen size={13} />
+                  <span>지능형 에듀케이션 & 학습 보조 앱</span>
+                </div>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                  Memora AI <span className="text-sm font-normal text-slate-400 ml-2">by Build03</span>
+                </h3>
+                <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                  두꺼운 전공 서적이나 PDF 문서를 읽고 정리하는 비효율을 없앱니다. AI가 복잡한 개념의 맥락을 분석하여 최적의 시험 대비 플래시카드를 자동 생성하고, 에빙하우스 망각 곡선에 기반한 적응형 스케줄러로 기억을 완벽히 유지해 줍니다.
+                </p>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">문서 이해</p>
+                    <p className="text-sm font-semibold text-white mt-1">PDF & 텍스트 심층 파싱</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">암기 최적화</p>
+                    <p className="text-sm font-semibold text-white mt-1">Anki 알고리즘 연동</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">구동 환경</p>
+                    <p className="text-sm font-semibold text-white mt-1">iOS Native & Offline Sync</p>
+                  </div>
+                </div>
+
+                {/* Status Badge & Disabled CTA */}
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-400 text-sm font-medium cursor-not-allowed select-none">
+                    <Lock size={15} className="text-slate-500" />
+                    <span>TestFlight 베타 모집 오픈 예정</span>
+                  </div>
+                  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-amber-400" />
+                    내부 알파 검증 단계 (모집 준비 중)
+                  </span>
+                </div>
+              </div>
+
+              {/* Graphic/Preview */}
+              <div className="lg:col-span-5 p-6 rounded-2xl bg-[#0b0d16] border border-white/10 shadow-inner">
+                <div className="space-y-3 font-mono text-xs">
+                  <div className="flex justify-between text-slate-500 pb-2 border-b border-white/5">
+                    <span>Active Session: Pathology.pdf</span>
+                    <span className="text-emerald-400">Internal Alpha</span>
+                  </div>
+                  <div className="p-4 rounded-xl bg-indigo-950/40 border border-indigo-500/20 text-slate-200">
+                    <p className="text-indigo-400 font-semibold text-xs mb-1">Q. 자동 생성된 심층 문항 #04</p>
+                    <p className="text-sm font-sans text-slate-100">급성 염증 반응에서 호중구 유출의 핵심 분자 기전은 무엇인가?</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/5 border border-white/5 flex justify-between items-center text-slate-300">
+                    <span className="text-[11px]">복습 추천 주기: 3일 후 (Ebbinghaus Spaced Model)</span>
+                    <span className="text-xs text-indigo-400 font-semibold">Dev Build</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* App 2: Voice AI Care App */}
+          <div className="group relative p-8 sm:p-12 rounded-3xl border border-white/10 bg-gradient-to-br from-white/[0.07] via-white/[0.03] to-transparent hover:border-purple-500/40 transition-all duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7 space-y-5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-semibold">
+                  <Mic size={13} />
+                  <span>대화형 AI 음성 체크인 & 웰니스 서비스</span>
+                </div>
+                <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                  Aura Check <span className="text-sm font-normal text-slate-400 ml-2">by Build03</span>
+                </h3>
+                <p className="text-slate-300 leading-relaxed text-sm sm:text-base">
+                  기계적인 알림창 대신 따뜻하고 자연스러운 음성으로 사용자의 안부와 일상 리듬을 묻습니다. 자연어 대화 흐름 속에서 건강 이상 징후나 스트레스 지수를 감지하여 소중한 사람들과 안전하게 공유하는 라이프케어 모바일 서비스입니다.
+                </p>
+
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">자연어 음성 파이프라인</p>
+                    <p className="text-sm font-semibold text-white mt-1">실시간 양방향 대화</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">데이터 신뢰성</p>
+                    <p className="text-sm font-semibold text-white mt-1">응급 상황 감지 및 알림</p>
+                  </div>
+                  <div className="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+                    <p className="text-xs text-slate-400">개인정보 보호</p>
+                    <p className="text-sm font-semibold text-white mt-1">종단간 암호화 보안</p>
+                  </div>
+                </div>
+
+                {/* Status Badge & Disabled CTA */}
+                <div className="flex flex-wrap items-center gap-4 pt-4">
+                  <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-400 text-sm font-medium cursor-not-allowed select-none">
+                    <Lock size={15} className="text-slate-500" />
+                    <span>클로즈드 베타 모집 오픈 예정</span>
+                  </div>
+                  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-purple-400" />
+                    음성 파이프라인 튜닝 중
+                  </span>
+                </div>
+              </div>
+
+              {/* Graphic/Preview */}
+              <div className="lg:col-span-5 p-6 rounded-2xl bg-[#0b0d16] border border-white/10">
+                <div className="flex items-center justify-between pb-3 border-b border-white/5">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-purple-400 animate-pulse" />
+                    <span className="text-xs text-slate-300 font-medium">Voice Check-in Engine Lab</span>
+                  </div>
+                  <Activity size={16} className="text-purple-400" />
+                </div>
+                <div className="py-6 flex flex-col items-center justify-center space-y-3">
+                  <div className="w-16 h-16 rounded-full bg-purple-500/20 border border-purple-500/40 flex items-center justify-center text-purple-300">
+                    <Mic size={26} />
+                  </div>
+                  <p className="text-xs text-slate-400 italic">&ldquo;오늘 아침 식사는 챙기셨나요? 목소리가 조금 잠기셨네요.&rdquo;</p>
+                </div>
+                <div className="p-3 rounded-xl bg-white/5 border border-white/5 text-center text-xs text-slate-400">
+                  음성 엔진 최적화 및 PSTN 통신 안정성 점검 진행 중
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Product Philosophy */}
+      <section id="philosophy" className="py-24 border-t border-white/5 bg-[#0a0c14]/50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-xs sm:text-sm uppercase tracking-widest text-indigo-400 font-semibold">Design & Engineering Principles</h2>
+            <p className="mt-3 text-3xl font-bold text-white">Build03이 제품을 만드는 3가지 원칙</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
+              <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-6">
+                <Smartphone size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">100% Native Craftsmanship</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                웹뷰를 감싼 어색한 하이브리드 앱을 만들지 않습니다. iOS 생태계에 완벽히 녹아드는 정교한 터치 피드백, 햅틱스, 부드러운 제스처를 타협 없이 구현합니다.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
+              <div className="w-12 h-12 rounded-2xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-6">
+                <ShieldCheck size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">On-Device & Privacy First</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                사용자의 데이터는 기기 안에서 가장 안전해야 합니다. 최적화된 온디바이스 AI(CoreML)를 통해 오프라인에서도 즉시 응답하며 민감한 데이터를 철저히 보호합니다.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
+              <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
+                <Zap size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">Invisible AI Experience</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">
+                기술 자체를 과시하지 않습니다. 복잡한 프롬프트 입력 없이도 사용자가 원하는 목적을 가장 빠르고 직관적으로 달성할 수 있도록 보이지 않는 곳에서 똑똑하게 작동합니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Build03 Labs (R&D Pipeline) */}
+      <section id="labs" className="py-24 max-w-7xl mx-auto px-6">
+        <div className="p-10 sm:p-14 rounded-3xl border border-white/10 bg-gradient-to-r from-indigo-950/30 via-slate-900/40 to-purple-950/30">
+          <div className="max-w-2xl">
+            <span className="text-xs uppercase tracking-widest text-indigo-400 font-semibold font-mono">
+              // BUILD03 LABS
+            </span>
+            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-white tracking-tight">
+              차세대 인공지능 연구 및 빌드 진행 상황
+            </h2>
+            <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed">
+              우리는 제품 개발과 함께 최신 멀티모달 모델, 경량화 임베딩, 에이전트 인터랙션 프로토타입을 지속적으로 연구합니다. 내부 검증을 마친 기술들은 Build03 앱의 정식 빌드에 순차적으로 반영됩니다.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-white/10">
+            <div className="p-4 rounded-xl bg-black/40 border border-white/5">
+              <span className="text-xs font-mono text-indigo-400">Research 01</span>
+              <p className="text-sm font-semibold text-white mt-1">온디바이스 비전 경량화</p>
+              <p className="text-xs text-slate-400 mt-1">카메라 실시간 연동 로컬 객체 감지</p>
+            </div>
+            <div className="p-4 rounded-xl bg-black/40 border border-white/5">
+              <span className="text-xs font-mono text-purple-400">Research 02</span>
+              <p className="text-sm font-semibold text-white mt-1">초저지연 음성 스트리밍</p>
+              <p className="text-xs text-slate-400 mt-1">모바일 환경 300ms 이내 음성 반응 파이프라인</p>
+            </div>
+            <div className="p-4 rounded-xl bg-black/40 border border-white/5">
+              <span className="text-xs font-mono text-emerald-400">Research 03</span>
+              <p className="text-sm font-semibold text-white mt-1">능동형 맥락 메모리</p>
+              <p className="text-xs text-slate-400 mt-1">사용자 행동 기반 로컬 벡터 캐싱</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Beta Status / Coming Soon Notice Section */}
+      <section id="beta-status" className="py-24 max-w-4xl mx-auto px-6 text-center">
+        <div className="p-8 sm:p-14 rounded-3xl border border-white/10 bg-gradient-to-b from-indigo-950/30 via-slate-900/40 to-slate-900/60 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+          
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 text-amber-300 text-xs font-semibold mb-6">
+            <AlertCircle size={14} />
+            <span>TestFlight 베타 테스터 모집 준비 중</span>
+          </div>
+
+          <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+            클로즈드 베타 프로그램이 곧 시작됩니다.
+          </h2>
+          <p className="mt-4 text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+            보다 완성도 높은 사용자 경험과 안전한 서비스를 제공하기 위해 현재 내부 알파 테스트를 면밀히 진행하고 있습니다. 베타 테스터 신청은 준비가 완료되는 대로 본 웹사이트를 통해 공지될 예정입니다.
+          </p>
+
+          {/* Inactive Schedule Display Card */}
+          <div className="mt-10 max-w-lg mx-auto p-6 rounded-2xl bg-black/40 border border-white/10 text-left space-y-4">
+            <div className="flex items-center justify-between pb-3 border-b border-white/10 text-xs">
+              <span className="text-slate-400 font-mono">PROGRAM STATUS</span>
+              <span className="text-amber-400 font-semibold flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                모집 오픈 준비 중 (신청 불가)
+              </span>
+            </div>
+
+            <div className="space-y-3 text-xs sm:text-sm">
+              <div className="flex items-center justify-between">
+                <span className="text-slate-300 font-medium">Memora AI (학습 보조)</span>
+                <span className="text-slate-400 text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/5">
+                  내부 빌드 안정화 중
+                </span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-slate-300 font-medium">Aura Check (음성 웰니스)</span>
+                <span className="text-slate-400 text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/5">
+                  파일럿 통신망 테스트 중
+                </span>
+              </div>
+            </div>
+
+            <div className="pt-3 border-t border-white/5 text-[11px] text-slate-400 leading-normal">
+              * 정식 TestFlight 신청 폼 오픈 시 공식 도메인(<span className="text-slate-300 font-mono">www.build03.com</span>) 메인 화면에 즉시 등록 창구가 활성화됩니다.
+            </div>
+          </div>
+
+          <p className="mt-8 text-xs text-slate-500">
+            기타 비즈니스 및 프레스 문의: <a href="mailto:jh@build03.com" className="text-indigo-400 underline hover:text-indigo-300 transition-colors">jh@build03.com</a>
+          </p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/5 py-12 bg-[#05060A]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-500">
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-white text-base tracking-tight">Build03</span>
+            <span className="text-slate-700">|</span>
+            <span>빌드공삼</span>
+          </div>
+
+          <div className="flex items-center gap-6 text-xs sm:text-sm">
+            <span>Domain: <strong className="text-slate-300 font-mono">www.build03.com</strong></span>
+            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Use</a>
+          </div>
+
+          <p className="text-xs">
+            &copy; 2026 Build03. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
