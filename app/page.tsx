@@ -18,8 +18,7 @@ import {
   Clock,
   ShieldCheck,
   AlertCircle,
-  Eye,
-  Cpu
+  Eye
 } from 'lucide-react';
 
 export default function Build03ProductStudio() {
@@ -92,18 +91,18 @@ export default function Build03ProductStudio() {
       <section className="relative pt-24 pb-20 md:pt-36 md:pb-28 max-w-7xl mx-auto px-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-xs md:text-sm font-medium mb-8 backdrop-blur-sm shadow-sm">
           <Sparkles size={16} className="text-indigo-400 animate-pulse" />
-          <span>Independent Mobile Software Maker</span>
+          <span>Software with Subtle Intelligence</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.14]">
-          지능형 인공지능을 가장 <br />
+        보이지 않는 곳에서 이해하고 <br />
           <span className="bg-gradient-to-r from-indigo-400 via-purple-300 to-pink-400 bg-clip-text text-transparent">
-            직관적인 모바일 경험
-          </span>으로 만듭니다.
+          손끝에서는 가장 자연스럽게
+          </span>
         </h1>
 
         <p className="mt-7 text-base sm:text-lg md:text-xl text-slate-300/90 max-w-2xl mx-auto font-light leading-relaxed">
-          Build03(빌드공삼)은 첨단 온디바이스 AI와 파운데이션 모델을 직접 설계한 네이티브 모바일 앱 속에 담아내어, 사람들의 학습과 일상을 혁신하는 자체 프로덕트를 제작·운영합니다.
+        Build03은 복잡한 조작이나 설명 없이도 사용자의 흐름을 먼저 읽어내는 네이티브 모바일 소프트웨어를 만듭니다. 기술의 거대함을 내세우기보다, 일상에 조용히 스며드는 제품을 제작하고 운영합니다.
         </p>
 
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -123,10 +122,10 @@ export default function Build03ProductStudio() {
           </a>
         </div>
 
-        {/* Hero Visual Mockup: 3D Quantum Core & Architecture */}
+        {/* Hero Visual Mockup: 3D Quantum Core & Architecture
         <div className="mt-16 md:mt-24 max-w-5xl mx-auto relative group">
           <div className="relative rounded-3xl overflow-hidden border border-white/15 bg-slate-950/70 backdrop-blur-2xl shadow-2xl shadow-indigo-950/50">
-            {/* Visual Cover Banner */}
+            Visual Cover Banner
             <div className="relative h-64 sm:h-80 md:h-96 w-full overflow-hidden">
               <img
                 src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80"
@@ -136,7 +135,7 @@ export default function Build03ProductStudio() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#090b14] via-[#090b14]/50 to-transparent" />
               
-              {/* Floating Spatial Badge */}
+              Floating Spatial Badge
               <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
                 <div className="text-left">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/30 border border-indigo-400/30 backdrop-blur-md text-xs font-mono text-indigo-200 mb-2">
@@ -157,7 +156,7 @@ export default function Build03ProductStudio() {
               </div>
             </div>
 
-            {/* 3 Metric Pills */}
+            3 Metric Pills
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/10 bg-[#090b14]/90 p-5 text-left">
               <div className="p-4 space-y-1">
                 <p className="text-xs font-mono text-indigo-400 uppercase tracking-wider">01. Inference Speed</p>
@@ -177,6 +176,7 @@ export default function Build03ProductStudio() {
             </div>
           </div>
         </div>
+        */}
       </section>
 
       {/* Featured Apps Lineup Section with Fancy Visual Cards */}
@@ -222,10 +222,20 @@ export default function Build03ProductStudio() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 pt-4">
-                  <div className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white/5 border border-white/10 text-slate-400 text-sm font-medium cursor-not-allowed select-none">
-                    <Lock size={15} className="text-slate-500" />
-                    <span>TestFlight 베타 모집 오픈 예정</span>
+                <div className="flex flex-col gap-3 pt-4">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
+                    <Link
+                      href="/demo/memora"
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]"
+                    >
+                      <Sparkles size={16} />
+                      <span>인터랙티브 데모 체험하기</span>
+                      <ArrowRight size={16} />
+                    </Link>
+                    <div className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap px-5 py-3.5 rounded-xl bg-white/5 border border-white/10 text-slate-400 text-sm font-medium cursor-not-allowed select-none">
+                      <Lock size={15} className="text-slate-500" />
+                      <span>TestFlight 베타 모집 오픈 예정</span>
+                    </div>
                   </div>
                   <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
                     <span className="w-2 h-2 rounded-full bg-amber-400" />
@@ -233,24 +243,6 @@ export default function Build03ProductStudio() {
                   </span>
                 </div>
               </div>
-
-              {/* Fancy Visual Mockup with Image Layer */}
-              {/* 기존 비활성화 버튼 영역 */}
-<div className="flex flex-wrap items-center gap-4 pt-4">
-  {/* 👇 데모 페이지로 연결되는 링크 버튼 추가 */}
-  <Link
-    href="/demo/memora"
-    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]"
-  >
-    <Sparkles size={16} />
-    <span>인터랙티브 데모 체험하기</span>
-  </Link>
-
-  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
-    <span className="w-2 h-2 rounded-full bg-amber-400" />
-    TestFlight 모집 준비 중
-  </span>
-</div>
 
               <div className="lg:col-span-6 relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0c16] shadow-2xl">
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden">
@@ -512,9 +504,9 @@ export default function Build03ProductStudio() {
           </div>
 
           <div className="flex items-center gap-6 text-xs sm:text-sm">
-            <span>Domain: <strong className="text-slate-300 font-mono">www.build03.com</strong></span>
-            <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Use</a>
+            <span><strong className="text-slate-300 font-mono">www.build03.com</strong></span>
+            {/* <a href="#" className="hover:text-slate-300 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-slate-300 transition-colors">Terms of Use</a> */}
           </div>
 
           <p className="text-xs">
