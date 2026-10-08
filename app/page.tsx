@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import {
   Smartphone,
   Sparkles,
@@ -234,6 +235,23 @@ export default function Build03ProductStudio() {
               </div>
 
               {/* Fancy Visual Mockup with Image Layer */}
+              {/* 기존 비활성화 버튼 영역 */}
+<div className="flex flex-wrap items-center gap-4 pt-4">
+  {/* 👇 데모 페이지로 연결되는 링크 버튼 추가 */}
+  <Link
+    href="/demo/memora"
+    className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]"
+  >
+    <Sparkles size={16} />
+    <span>인터랙티브 데모 체험하기</span>
+  </Link>
+
+  <span className="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+    <span className="w-2 h-2 rounded-full bg-amber-400" />
+    TestFlight 모집 준비 중
+  </span>
+</div>
+
               <div className="lg:col-span-6 relative rounded-2xl overflow-hidden border border-white/10 bg-[#0a0c16] shadow-2xl">
                 <div className="relative h-72 sm:h-80 w-full overflow-hidden">
                   <img
