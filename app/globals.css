@@ -1,5 +1,23 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 사파리(WebKit) 터치 및 클릭 지연 제거, 부드러운 스크롤 */
+html {
+  scroll-behavior: smooth;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 사파리에서 GPU 가속을 유지하여 블러 병목 해소 */
+button, a {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

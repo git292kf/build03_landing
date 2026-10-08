@@ -29,9 +29,9 @@ export default function Build03ProductStudio() {
       {/* Background Ambient Glows & Grid Pattern */}
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-transparent blur-[160px] rounded-full" />
-        <div className="absolute top-[40%] -right-40 w-[600px] h-[600px] bg-blue-600/10 blur-[170px] rounded-full" />
-        <div className="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-purple-600/10 blur-[160px] rounded-full" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-gradient-to-tr from-indigo-600/20 via-purple-600/15 to-transparent blur-[160px] rounded-full transform-gpu will-change-transform" />
+        <div className="absolute top-[40%] -right-40 w-[600px] h-[600px] bg-blue-600/10 blur-[170px] rounded-full transform-gpu will-change-transform" />
+        <div className="absolute bottom-10 -left-40 w-[600px] h-[600px] bg-purple-600/10 blur-[160px] rounded-full transform-gpu will-change-transform" />
       </div>
 
       {/* Navigation */}
@@ -67,7 +67,7 @@ export default function Build03ProductStudio() {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-slate-400 hover:text-white p-2"
+            className="md:hidden text-slate-400 hover:text-white p-2 transition-transform duration-150 active:scale-[0.97]"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -108,14 +108,14 @@ export default function Build03ProductStudio() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="#apps"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold bg-white text-slate-950 hover:bg-slate-200 transition-all shadow-xl hover:scale-[1.02]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-semibold bg-white text-slate-950 hover:bg-slate-200 transition-all duration-150 shadow-xl hover:scale-[1.02] active:scale-[0.97]"
           >
             출시 예정 앱 보기
             <ArrowRight size={18} />
           </a>
           <a
             href="#beta-status"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 transition-all backdrop-blur-sm"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-base font-medium border border-white/10 bg-white/5 hover:bg-white/10 text-slate-300 transition-all duration-150 backdrop-blur-sm active:scale-[0.97]"
           >
             <Clock size={16} className="text-amber-400" />
             베타 오픈 일정 안내
@@ -226,7 +226,7 @@ export default function Build03ProductStudio() {
                   <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
                     <Link
                       href="/demo/memora"
-                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all shadow-lg shadow-indigo-600/30 hover:scale-[1.02]"
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2 whitespace-nowrap px-6 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all duration-150 shadow-lg shadow-indigo-600/30 hover:scale-[1.02] active:scale-[0.97]"
                     >
                       <Sparkles size={16} />
                       <span>인터랙티브 데모 체험하기</span>
